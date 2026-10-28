@@ -3,4 +3,4 @@ import factory from './is-valid.js';
 
 const isValid = factory(validators);
 
-export default isValid;
+export { isValid };
