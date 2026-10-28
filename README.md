@@ -1,6 +1,6 @@
-# @replace-params/validation-core
+# @replace-params/validation
 
-A lightweight validation engine that selects validators by rule type.
+A lightweight validation utility that validates values using rules and registered validators.
 
 ## Features
 
@@ -8,19 +8,19 @@ A lightweight validation engine that selects validators by rule type.
 - Select validators through the `type` property.
 - Support rule-specific options.
 - Return a boolean result.
-- Handle invalid and unknown rules safely.
+- Handle invalid rules and unknown validator types safely.
 - No runtime dependencies.
 
 ## Installation
 
 ```bash
-npm install @replace-params/validation-core
+npm install @replace-params/validation
 ```
 
 ## Usage
 
 ```js
-import isValid from '@replace-params/validation-core';
+import isValid from '@replace-params/validation';
 
 isValid('Hello', { type: 'string' }); // true
 
@@ -49,7 +49,7 @@ The `object` validator accepts `allowNull: true` to allow `null`.
 - `rule` — an object with a required string property `type`.
 - Returns `true` if the selected validator accepts the value; otherwise, returns `false`.
 
-Unknown validator types and invalid rules return `false`.
+Invalid rules and unknown validator types return `false`.
 
 ## Requirements
 
