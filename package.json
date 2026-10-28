@@ -1,6 +1,6 @@
 {
   "name": "@replace-params/validation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight validation engine that selects validators by rule type.",
   "type": "module",
   "main": "./src/index.js",
