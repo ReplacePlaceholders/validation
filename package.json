@@ -1,0 +1,18 @@
+{
+  "name": "@replace-params/validation",
+  "version": "1.0.0",
+  "description": "A lightweight validation engine that selects validators by rule type.",
+  "type": "module",
+  "exports": "./src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
