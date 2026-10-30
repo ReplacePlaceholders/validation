@@ -1,6 +1,6 @@
 {
   "name": "@replace-placeholder/validation",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "A lightweight validation engine that selects validators by rule type.",
   "type": "module",
   "main": "./src/index.js",
