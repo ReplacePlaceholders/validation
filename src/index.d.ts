@@ -8,4 +8,4 @@ declare const isValid: (
   rule: ValidationRule,
 ) => boolean;
 
-export { isValid };
+export default isValid;

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { isValid } from '../src/index.js';
+import isValid from '../src/index.js';
 
 test('validates strings', () => {
   assert.equal(isValid('Hello', { type: 'string' }), true);

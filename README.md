@@ -1,12 +1,12 @@
 # @replace-params/validation
 
-A lightweight validation utility that validates values using rules and registered validators.
+A lightweight validation utility for validating values against rules using registered validators.
 
 ## Features
 
 - Validate values using registered validators.
 - Select validators through the `type` property.
-- Support rule-specific options.
+- Support validator-specific options.
 - Return a boolean result.
 - Handle invalid rules and unknown validator types safely.
 - No runtime dependencies.
@@ -31,6 +31,14 @@ isValid(null, { type: 'object', allowNull: true }); // true
 isValid('Hello', { type: 'unknown' }); // false
 ```
 
+You can choose any local name for the imported function:
+
+```js
+import validate from '@replace-params/validation';
+
+validate('Hello', { type: 'string' }); // true
+```
+
 ## Supported Validators
 
 | Type | Description |
@@ -39,17 +47,39 @@ isValid('Hello', { type: 'unknown' }); // false
 | `object` | Checks whether the value is an object or an array. |
 | `non-empty-string` | Checks whether the value is a non-empty string. |
 
-The `object` validator accepts `allowNull: true` to allow `null`.
+### Validator Options
+
+The `object` validator supports the following option:
+
+| Option | Type | Description |
+|---|---|---|
+| `allowNull` | `boolean` | Allows `null` as a valid value when set to `true`. |
 
 ## API
 
 ### `isValid(value, rule)`
 
-- `value` — the value to validate.
-- `rule` — an object with a required string property `type`.
-- Returns `true` if the selected validator accepts the value; otherwise, returns `false`.
+Validates a value against a specified rule.
+
+**Parameters:**
+
+- `value` (`unknown`) — the value to validate.
+- `rule` (`ValidationRule`) — an object containing a required `type` property and optional validator-specific options.
+
+**Returns:** `boolean` — returns `true` if the selected validator accepts the value; otherwise, returns `false`.
 
 Invalid rules and unknown validator types return `false`.
+
+### TypeScript
+
+The package provides TypeScript declarations.
+
+```ts
+export type ValidationRule = {
+  type: string;
+  [key: string]: unknown;
+};
+```
 
 ## Requirements
 
